@@ -13,12 +13,20 @@ header a {
 header {
     background-color: black;
     height: 300px;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     background-image: url('../images/-0\ \(3\).jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 9;
+}
+
+nav {
+    background-color: rgb(202, 202, 157);
+    margin: 0px;
+    z-index: 10;
+    opacity: 0.5;
 }
 
 nav ul {
@@ -48,9 +56,36 @@ header .logo a{
     text-indent: -99999999px;
 }
 
-@media screen and (max-width:575px){
+header #find-m {
+    position: relative;
+    display: inline;
+    top: 150px;
+}
+
+#find-m span {
+    border:1px wheat solid;
+    border-radius: 3px;
+}
+
+div input {
+    display: none;
+}
+
+.edit span {
+    display: none;
+}
+
+.edit input {
+    display: initial;
+}
+
+@media screen and (max-width: 535px){
     nav .mobile {
         display: inline-block;
+    }
+
+    header #find-m {
+        top: 32px;
     }
 
     nav .pc {

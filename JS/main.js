@@ -21,4 +21,29 @@ function clLink(){
         img.className = 'hide';
     }
 }
+// ------------------------
 
+var findM = document.getElementById('find-m');
+var findM_input = findM.querySelector('#find-m input');
+
+findM.addEventListener('click', spanClick);
+findM_input.addEventListener('blur', inputBlur);
+findM_input.addEventListener('keypress', inputKeypress);
+
+function spanClick(){
+    this.className = 'edit';
+    var input = this.querySelector('input');
+    input.focus();
+    input.setSelectionRange(0, input.value.length);
+}
+
+function inputBlur(){
+    this.previousElementSibling.innerHTML = this.value;
+    this.parentNode.className = '';
+}
+
+function inputKeypress(event){
+    if(event.which === 13){
+        inputBlur.call(this);
+    }
+}
