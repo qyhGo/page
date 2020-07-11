@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(48, 46, 46);
+    background-image: url('./img2/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     perspective: 800px;
 }
 
@@ -8,13 +10,98 @@ body {
     height: 200px;
     margin: 300px auto;
     transform-style: preserve-3d;
-    transform: rotateY();
     transform: rotateX(-10deg);
+    -webkit-animation: tran 50s linear infinite;
+    -moz-animation: tran 50s linear infinite;
+    -o-animation: tran 50s linear infinite;
+    animation: tran 50s linear infinite;
 }
 
-img {
+@-moz-keyframes tran{
+    from{transform: rotateX(-10deg) rotateY(0deg);}
+    to{transform: rotateX(-10deg) rotateY(360deg);}
+}
+@-webkit-keyframes tran{
+    from{transform: rotateX(-10deg) rotateY(0deg);}
+    to{transform: rotateX(-10deg) rotateY(360deg);}
+}
+@-o-keyframes tran{
+    from{transform: rotateX(-10deg) rotateY(0deg);}
+    to{transform: rotateX(-10deg) rotateY(360deg);}
+}
+@keyframes tran{
+    from{transform: rotateX(-10deg) rotateY(0deg);}
+    to{transform: rotateX(-10deg) rotateY(360deg);}
+}
+
+#pic img {
     position: absolute;
     border: 1px solid rebeccapurple;
     width: 150px;
     height: 200px;
+}
+
+.con {
+    display: black;
+    width:200px;
+    height:200px;
+    margin:300px auto;
+    transform-style: preserve-3d;
+    -webkit-animation: rotate 10s linear infinite;
+    -moz-animation: rotate 10s linear infinite;
+    -o-animation: rotate 10s linear infinite;
+    animation: rotate 10s linear infinite;
+}
+.xuanzhuan{
+    position: absolute;
+    opacity: 0.8;
+}
+.xuanzhuan img{
+    position:absolute;
+    width:200px;
+    height:200px;
+}
+@-webkit-keyframes rotate{
+    from{-webkit-transform: rotateX(0deg) rotateY(0deg)}
+    to{-webkit-transform: rotateX(360deg) rotateY(360deg)}
+}
+@-moz-keyframes rotate{
+    from{-moz-transform: rotate(0deg)}
+    to{-moz-transform: rotate(360deg)}
+}
+@-o-keyframes rotate{
+    from{-o-transform: rotate(0deg)}
+    to{-o-transform: rotate(360deg)}
+}
+@keyframes rotate{
+    from{transform: rotateX(0deg) rotateY(0deg)}
+    to{transform: rotateX(360deg) rotateY(360deg)}
+}
+#front{
+    transform: rotateY(0deg) translateZ(100px)
+}
+#back{
+    transform: translateZ(-100px) rotateY(180deg)
+}
+#left{
+    transform: rotateY(90deg) translateZ(100px)
+}
+#right{
+    transform: rotateY(-90deg) translateZ(100px)
+}
+#top{
+    transform: rotateX(90deg) translateZ(100px)
+}
+#bottom{
+    transform: rotateX(-90deg) translateZ(100px)
+}
+
+button {
+    position: relative;
+    left: 50%;
+    bottom: 100px;
+    color: aqua;
+    background-color: burlywood;
+    border: 1px solid wheat;
+    border-radius: 10%;
 }
